@@ -109,8 +109,12 @@ iOSInjectionProject/
 ### Xcode Patch ###
 **/xcshareddata/WorkspaceSettings.xcsettings
 
+
+bluescapeShare/APIKeys.swift
+
+
 # End of https://www.gitignore.io/api/swift,xcode,cocoapods
 
 
-bluescapeShare/APIKeys.swift
+
 
