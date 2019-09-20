@@ -12,7 +12,38 @@
 		DA3F2D52233540C80039E23F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA3F2D50233540C80039E23F /* Main.storyboard */; };
 		DA3F2D54233540C80039E23F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA3F2D53233540C80039E23F /* Assets.xcassets */; };
 		DA3F2D57233540C80039E23F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA3F2D55233540C80039E23F /* LaunchScreen.storyboard */; };
+		DA3F2D5F233541C30039E23F /* ImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3F2D5E233541C30039E23F /* ImageCollectionCell.swift */; };
+		DA3F2D612335436A0039E23F /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3F2D602335436A0039E23F /* CellModel.swift */; };
+		DA3F2D69233546EB0039E23F /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3F2D68233546EB0039E23F /* ShareViewController.swift */; };
+		DA3F2D6C233546EB0039E23F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA3F2D6A233546EB0039E23F /* MainInterface.storyboard */; };
+		DA3F2D70233546EB0039E23F /* bluescapeShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DA3F2D66233546EB0039E23F /* bluescapeShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		DA3F2D78233547FD0039E23F /* ShareImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3F2D77233547FD0039E23F /* ShareImageCollectionCell.swift */; };
+		DA3F2D7A2335578B0039E23F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DA3F2D792335578B0039E23F /* .gitignore */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DA3F2D6E233546EB0039E23F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA3F2D41233540C80039E23F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA3F2D65233546EB0039E23F;
+			remoteInfo = bluescapeShareExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DA3F2D74233546EB0039E23F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				DA3F2D70233546EB0039E23F /* bluescapeShareExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		DA3F2D49233540C80039E23F /* bluescapeShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bluescapeShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -22,10 +53,27 @@
 		DA3F2D53233540C80039E23F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA3F2D56233540C80039E23F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA3F2D58233540C80039E23F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA3F2D5E233541C30039E23F /* ImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionCell.swift; sourceTree = "<group>"; };
+		DA3F2D602335436A0039E23F /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
+		DA3F2D66233546EB0039E23F /* bluescapeShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = bluescapeShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA3F2D68233546EB0039E23F /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
+		DA3F2D6B233546EB0039E23F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		DA3F2D6D233546EB0039E23F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA3F2D75233547000039E23F /* bluescapeShareExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bluescapeShareExtension.entitlements; sourceTree = "<group>"; };
+		DA3F2D76233547230039E23F /* bluescapeShare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bluescapeShare.entitlements; sourceTree = "<group>"; };
+		DA3F2D77233547FD0039E23F /* ShareImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareImageCollectionCell.swift; sourceTree = "<group>"; };
+		DA3F2D792335578B0039E23F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		DA3F2D46233540C80039E23F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA3F2D63233546EB0039E23F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -38,7 +86,9 @@
 		DA3F2D40233540C80039E23F = {
 			isa = PBXGroup;
 			children = (
+				DA3F2D792335578B0039E23F /* .gitignore */,
 				DA3F2D4B233540C80039E23F /* bluescapeShare */,
+				DA3F2D67233546EB0039E23F /* bluescapeShareExtension */,
 				DA3F2D4A233540C80039E23F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -47,6 +97,7 @@
 			isa = PBXGroup;
 			children = (
 				DA3F2D49233540C80039E23F /* bluescapeShare.app */,
+				DA3F2D66233546EB0039E23F /* bluescapeShareExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -54,14 +105,29 @@
 		DA3F2D4B233540C80039E23F /* bluescapeShare */ = {
 			isa = PBXGroup;
 			children = (
+				DA3F2D76233547230039E23F /* bluescapeShare.entitlements */,
 				DA3F2D4C233540C80039E23F /* AppDelegate.swift */,
 				DA3F2D4E233540C80039E23F /* ViewController.swift */,
+				DA3F2D5E233541C30039E23F /* ImageCollectionCell.swift */,
 				DA3F2D50233540C80039E23F /* Main.storyboard */,
 				DA3F2D53233540C80039E23F /* Assets.xcassets */,
 				DA3F2D55233540C80039E23F /* LaunchScreen.storyboard */,
 				DA3F2D58233540C80039E23F /* Info.plist */,
+				DA3F2D602335436A0039E23F /* CellModel.swift */,
 			);
 			path = bluescapeShare;
+			sourceTree = "<group>";
+		};
+		DA3F2D67233546EB0039E23F /* bluescapeShareExtension */ = {
+			isa = PBXGroup;
+			children = (
+				DA3F2D75233547000039E23F /* bluescapeShareExtension.entitlements */,
+				DA3F2D68233546EB0039E23F /* ShareViewController.swift */,
+				DA3F2D6A233546EB0039E23F /* MainInterface.storyboard */,
+				DA3F2D6D233546EB0039E23F /* Info.plist */,
+				DA3F2D77233547FD0039E23F /* ShareImageCollectionCell.swift */,
+			);
+			path = bluescapeShareExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,15 +140,34 @@
 				DA3F2D45233540C80039E23F /* Sources */,
 				DA3F2D46233540C80039E23F /* Frameworks */,
 				DA3F2D47233540C80039E23F /* Resources */,
+				DA3F2D74233546EB0039E23F /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				DA3F2D6F233546EB0039E23F /* PBXTargetDependency */,
 			);
 			name = bluescapeShare;
 			productName = bluescapeShare;
 			productReference = DA3F2D49233540C80039E23F /* bluescapeShare.app */;
 			productType = "com.apple.product-type.application";
+		};
+		DA3F2D65233546EB0039E23F /* bluescapeShareExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA3F2D71233546EB0039E23F /* Build configuration list for PBXNativeTarget "bluescapeShareExtension" */;
+			buildPhases = (
+				DA3F2D62233546EB0039E23F /* Sources */,
+				DA3F2D63233546EB0039E23F /* Frameworks */,
+				DA3F2D64233546EB0039E23F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = bluescapeShareExtension;
+			productName = bluescapeShareExtension;
+			productReference = DA3F2D66233546EB0039E23F /* bluescapeShareExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -96,6 +181,19 @@
 				TargetAttributes = {
 					DA3F2D48233540C80039E23F = {
 						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					DA3F2D65233546EB0039E23F = {
+						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -113,6 +211,7 @@
 			projectRoot = "";
 			targets = (
 				DA3F2D48233540C80039E23F /* bluescapeShare */,
+				DA3F2D65233546EB0039E23F /* bluescapeShareExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -128,6 +227,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DA3F2D64233546EB0039E23F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA3F2D7A2335578B0039E23F /* .gitignore in Resources */,
+				DA3F2D6C233546EB0039E23F /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -136,11 +244,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA3F2D4F233540C80039E23F /* ViewController.swift in Sources */,
+				DA3F2D5F233541C30039E23F /* ImageCollectionCell.swift in Sources */,
 				DA3F2D4D233540C80039E23F /* AppDelegate.swift in Sources */,
+				DA3F2D612335436A0039E23F /* CellModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA3F2D62233546EB0039E23F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA3F2D69233546EB0039E23F /* ShareViewController.swift in Sources */,
+				DA3F2D78233547FD0039E23F /* ShareImageCollectionCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DA3F2D6F233546EB0039E23F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA3F2D65233546EB0039E23F /* bluescapeShareExtension */;
+			targetProxy = DA3F2D6E233546EB0039E23F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		DA3F2D50233540C80039E23F /* Main.storyboard */ = {
@@ -157,6 +284,14 @@
 				DA3F2D56233540C80039E23F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		DA3F2D6A233546EB0039E23F /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA3F2D6B233546EB0039E23F /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -281,7 +416,9 @@
 		DA3F2D5C233540C80039E23F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = bluescapeShare/bluescapeShare.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A3QT3RRV5J;
 				INFOPLIST_FILE = bluescapeShare/Info.plist;
@@ -299,7 +436,9 @@
 		DA3F2D5D233540C80039E23F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = bluescapeShare/bluescapeShare.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = A3QT3RRV5J;
 				INFOPLIST_FILE = bluescapeShare/Info.plist;
@@ -309,6 +448,46 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.brotherclone.bluescapeShare;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DA3F2D72233546EB0039E23F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = bluescapeShareExtension/bluescapeShareExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A3QT3RRV5J;
+				INFOPLIST_FILE = bluescapeShareExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.brotherclone.bluescapeShare.bluescapeShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DA3F2D73233546EB0039E23F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = bluescapeShareExtension/bluescapeShareExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = A3QT3RRV5J;
+				INFOPLIST_FILE = bluescapeShareExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.brotherclone.bluescapeShare.bluescapeShareExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -331,6 +510,15 @@
 			buildConfigurations = (
 				DA3F2D5C233540C80039E23F /* Debug */,
 				DA3F2D5D233540C80039E23F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA3F2D71233546EB0039E23F /* Build configuration list for PBXNativeTarget "bluescapeShareExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA3F2D72233546EB0039E23F /* Debug */,
+				DA3F2D73233546EB0039E23F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
