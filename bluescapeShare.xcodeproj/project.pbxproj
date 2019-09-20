@@ -11,6 +11,7 @@
 		368EA2202DD3C11B6FB2D385 /* Pods_bluescapeShareExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7AEC0FC8162764F70C3A5D6 /* Pods_bluescapeShareExtension.framework */; };
 		DA35DC4E23355D3100A8B6B9 /* background-01.png in Resources */ = {isa = PBXBuildFile; fileRef = DA35DC4D23355D3100A8B6B9 /* background-01.png */; };
 		DA35DC5023355DEA00A8B6B9 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA35DC4F23355DEA00A8B6B9 /* APIKeys.swift */; };
+		DA35DC5223355F7300A8B6B9 /* APIKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA35DC5123355F7300A8B6B9 /* APIKeys.swift */; };
 		DA3F2D4D233540C80039E23F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3F2D4C233540C80039E23F /* AppDelegate.swift */; };
 		DA3F2D4F233540C80039E23F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3F2D4E233540C80039E23F /* ViewController.swift */; };
 		DA3F2D52233540C80039E23F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA3F2D50233540C80039E23F /* Main.storyboard */; };
@@ -58,6 +59,7 @@
 		6E2798AE0C0943B7F952BF6A /* Pods-bluescapeShareExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bluescapeShareExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-bluescapeShareExtension/Pods-bluescapeShareExtension.release.xcconfig"; sourceTree = "<group>"; };
 		DA35DC4D23355D3100A8B6B9 /* background-01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-01.png"; sourceTree = "<group>"; };
 		DA35DC4F23355DEA00A8B6B9 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
+		DA35DC5123355F7300A8B6B9 /* APIKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeys.swift; sourceTree = "<group>"; };
 		DA3F2D49233540C80039E23F /* bluescapeShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bluescapeShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA3F2D4C233540C80039E23F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA3F2D4E233540C80039E23F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +137,7 @@
 				DA3F2D55233540C80039E23F /* LaunchScreen.storyboard */,
 				DA3F2D58233540C80039E23F /* Info.plist */,
 				DA3F2D602335436A0039E23F /* CellModel.swift */,
+				DA35DC5123355F7300A8B6B9 /* APIKeys.swift */,
 			);
 			path = bluescapeShare;
 			sourceTree = "<group>";
@@ -363,6 +366,7 @@
 			files = (
 				DA35DC5023355DEA00A8B6B9 /* APIKeys.swift in Sources */,
 				DA3F2D4F233540C80039E23F /* ViewController.swift in Sources */,
+				DA35DC5223355F7300A8B6B9 /* APIKeys.swift in Sources */,
 				DA3F2D5F233541C30039E23F /* ImageCollectionCell.swift in Sources */,
 				DA3F2D7C233557D30039E23F /* BluescapeAPITargets.swift in Sources */,
 				DA3F2D4D233540C80039E23F /* AppDelegate.swift in Sources */,
