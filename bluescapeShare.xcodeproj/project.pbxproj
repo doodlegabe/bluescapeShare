@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		261BDD775DFBB5034FEF92CC /* Pods_bluescapeShare.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 228520142D8FA1599365856D /* Pods_bluescapeShare.framework */; };
+		368EA2202DD3C11B6FB2D385 /* Pods_bluescapeShareExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7AEC0FC8162764F70C3A5D6 /* Pods_bluescapeShareExtension.framework */; };
 		DA3F2D4D233540C80039E23F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3F2D4C233540C80039E23F /* AppDelegate.swift */; };
 		DA3F2D4F233540C80039E23F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3F2D4E233540C80039E23F /* ViewController.swift */; };
 		DA3F2D52233540C80039E23F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA3F2D50233540C80039E23F /* Main.storyboard */; };
@@ -19,6 +21,7 @@
 		DA3F2D70233546EB0039E23F /* bluescapeShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DA3F2D66233546EB0039E23F /* bluescapeShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		DA3F2D78233547FD0039E23F /* ShareImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3F2D77233547FD0039E23F /* ShareImageCollectionCell.swift */; };
 		DA3F2D7A2335578B0039E23F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DA3F2D792335578B0039E23F /* .gitignore */; };
+		DA3F2D7C233557D30039E23F /* BluescapeAPITargets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3F2D7B233557D30039E23F /* BluescapeAPITargets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +49,11 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		228520142D8FA1599365856D /* Pods_bluescapeShare.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bluescapeShare.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3663935DEAE37DE7C6FB628B /* Pods-bluescapeShare.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bluescapeShare.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bluescapeShare/Pods-bluescapeShare.debug.xcconfig"; sourceTree = "<group>"; };
+		3BC46CB196E8ECDB1EFD4B3A /* Pods-bluescapeShareExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bluescapeShareExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-bluescapeShareExtension/Pods-bluescapeShareExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		690A2D4978B0CC6CD0201F07 /* Pods-bluescapeShare.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bluescapeShare.release.xcconfig"; path = "Pods/Target Support Files/Pods-bluescapeShare/Pods-bluescapeShare.release.xcconfig"; sourceTree = "<group>"; };
+		6E2798AE0C0943B7F952BF6A /* Pods-bluescapeShareExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-bluescapeShareExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-bluescapeShareExtension/Pods-bluescapeShareExtension.release.xcconfig"; sourceTree = "<group>"; };
 		DA3F2D49233540C80039E23F /* bluescapeShare.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bluescapeShare.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA3F2D4C233540C80039E23F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DA3F2D4E233540C80039E23F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +71,8 @@
 		DA3F2D76233547230039E23F /* bluescapeShare.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bluescapeShare.entitlements; sourceTree = "<group>"; };
 		DA3F2D77233547FD0039E23F /* ShareImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareImageCollectionCell.swift; sourceTree = "<group>"; };
 		DA3F2D792335578B0039E23F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		DA3F2D7B233557D30039E23F /* BluescapeAPITargets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluescapeAPITargets.swift; sourceTree = "<group>"; };
+		F7AEC0FC8162764F70C3A5D6 /* Pods_bluescapeShareExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bluescapeShareExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +80,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				261BDD775DFBB5034FEF92CC /* Pods_bluescapeShare.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				368EA2202DD3C11B6FB2D385 /* Pods_bluescapeShareExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,6 +102,8 @@
 				DA3F2D4B233540C80039E23F /* bluescapeShare */,
 				DA3F2D67233546EB0039E23F /* bluescapeShareExtension */,
 				DA3F2D4A233540C80039E23F /* Products */,
+				EAB80CC302A6C9760A5D0955 /* Pods */,
+				F2A611081BBB8835A1C066E1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +119,7 @@
 		DA3F2D4B233540C80039E23F /* bluescapeShare */ = {
 			isa = PBXGroup;
 			children = (
+				DA3F2D7B233557D30039E23F /* BluescapeAPITargets.swift */,
 				DA3F2D76233547230039E23F /* bluescapeShare.entitlements */,
 				DA3F2D4C233540C80039E23F /* AppDelegate.swift */,
 				DA3F2D4E233540C80039E23F /* ViewController.swift */,
@@ -130,6 +145,26 @@
 			path = bluescapeShareExtension;
 			sourceTree = "<group>";
 		};
+		EAB80CC302A6C9760A5D0955 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3663935DEAE37DE7C6FB628B /* Pods-bluescapeShare.debug.xcconfig */,
+				690A2D4978B0CC6CD0201F07 /* Pods-bluescapeShare.release.xcconfig */,
+				3BC46CB196E8ECDB1EFD4B3A /* Pods-bluescapeShareExtension.debug.xcconfig */,
+				6E2798AE0C0943B7F952BF6A /* Pods-bluescapeShareExtension.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F2A611081BBB8835A1C066E1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				228520142D8FA1599365856D /* Pods_bluescapeShare.framework */,
+				F7AEC0FC8162764F70C3A5D6 /* Pods_bluescapeShareExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -137,10 +172,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA3F2D5B233540C80039E23F /* Build configuration list for PBXNativeTarget "bluescapeShare" */;
 			buildPhases = (
+				DA88B0AF744892A8FE0CCF06 /* [CP] Check Pods Manifest.lock */,
 				DA3F2D45233540C80039E23F /* Sources */,
 				DA3F2D46233540C80039E23F /* Frameworks */,
 				DA3F2D47233540C80039E23F /* Resources */,
 				DA3F2D74233546EB0039E23F /* Embed App Extensions */,
+				FAC4726E810AEAD7A1ECF752 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -156,6 +193,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DA3F2D71233546EB0039E23F /* Build configuration list for PBXNativeTarget "bluescapeShareExtension" */;
 			buildPhases = (
+				F51365898D46E33DBD2CAB1B /* [CP] Check Pods Manifest.lock */,
 				DA3F2D62233546EB0039E23F /* Sources */,
 				DA3F2D63233546EB0039E23F /* Frameworks */,
 				DA3F2D64233546EB0039E23F /* Resources */,
@@ -238,6 +276,79 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		DA88B0AF744892A8FE0CCF06 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-bluescapeShare-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F51365898D46E33DBD2CAB1B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-bluescapeShareExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FAC4726E810AEAD7A1ECF752 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-bluescapeShare/Pods-bluescapeShare-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-bluescapeShare/Pods-bluescapeShare-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		DA3F2D45233540C80039E23F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -245,6 +356,7 @@
 			files = (
 				DA3F2D4F233540C80039E23F /* ViewController.swift in Sources */,
 				DA3F2D5F233541C30039E23F /* ImageCollectionCell.swift in Sources */,
+				DA3F2D7C233557D30039E23F /* BluescapeAPITargets.swift in Sources */,
 				DA3F2D4D233540C80039E23F /* AppDelegate.swift in Sources */,
 				DA3F2D612335436A0039E23F /* CellModel.swift in Sources */,
 			);
@@ -415,6 +527,7 @@
 		};
 		DA3F2D5C233540C80039E23F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3663935DEAE37DE7C6FB628B /* Pods-bluescapeShare.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -435,6 +548,7 @@
 		};
 		DA3F2D5D233540C80039E23F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 690A2D4978B0CC6CD0201F07 /* Pods-bluescapeShare.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -455,6 +569,7 @@
 		};
 		DA3F2D72233546EB0039E23F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3BC46CB196E8ECDB1EFD4B3A /* Pods-bluescapeShareExtension.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = bluescapeShareExtension/bluescapeShareExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -475,6 +590,7 @@
 		};
 		DA3F2D73233546EB0039E23F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E2798AE0C0943B7F952BF6A /* Pods-bluescapeShareExtension.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = bluescapeShareExtension/bluescapeShareExtension.entitlements;
 				CODE_SIGN_STYLE = Automatic;
