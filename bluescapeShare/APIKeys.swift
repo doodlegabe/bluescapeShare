@@ -9,5 +9,5 @@
 import Foundation
 
 struct APIKeys {
-    
+    static var bluescape = ""
 }
