@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Moya
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -28,8 +30,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(_ application: UIApplication) {}
 
     func applicationWillTerminate(_ application: UIApplication) {}
-
-
 }
 
 extension AppDelegate{
@@ -37,17 +37,17 @@ extension AppDelegate{
         let userDefaults = UserDefaults(suiteName: "group.com.brotherclone.bluescape.share")
         if let key = url.absoluteString.components(separatedBy: "=").last,
             let sharedArray = userDefaults?.object(forKey: key) as? [Data] {
-            
             var imageArray: [CellModel] = []
-            
             for imageData in sharedArray {
                 let model = CellModel(image: UIImage(data: imageData)!)
                 imageArray.append(model)
             }
-            
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let homeVC = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
             homeVC.cellItems = imageArray
+            
+            // MARK: Upload the Shared Image
+            
             let navVC = storyboard.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
             navVC.viewControllers = [homeVC]
             self.window?.rootViewController = navVC

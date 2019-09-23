@@ -31,9 +31,8 @@ class ShareViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Picked Images"
+        self.navigationItem.title = "Upload to Bluescape"
         self.manageImages()
-        print("extension loaded")
     }
     
     

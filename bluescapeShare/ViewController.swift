@@ -7,18 +7,59 @@
 //
 
 import UIKit
+import Moya
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var imgCollectionView: UICollectionView!
     
     var cellItems: [CellModel] = []
     
     var imagePicker: UIImagePickerController?
+
     
     @IBAction func openPhoto(_ sender: Any) {
         self.present(self.imagePicker!, animated: true, completion: nil)
     }
+    
+    func test(){
+        let authPlugin = AccessTokenPlugin {APIKeys.bluescapeAuthToken }
+        let bluescapeAPIProvider = NetworkManager.provider
+        let workspaceID = String(APIKeys.bluescapeAPIWorkspaceID)
+        
+        bluescapeAPIProvider.request(.getCanvases(workspaceId: workspaceID)) { result in
+            switch result {
+            case let .success(moyaResponse):
+
+                do{
+                    let filteredResponse = try moyaResponse.filterSuccessfulStatusCodes()
+                    let canvas = try filteredResponse.map(Canvas.self)
+                } catch let error {
+                    print("parse \(error)")
+                }
+            case let .failure(error):
+                print(error)
+            }
+        }
+
+        
+//        bluescapeAPIProvider.request(.getCanvases(workspaceId: "")) {
+//            result in
+//            switch result{
+//            case let .success(moyaResponse):
+//                do{
+//                    let filteredResponse = try moyaResponse.filterSuccessfulStatusCodes()
+//                    self.canvas = try filteredResponse.map(Canvas.self)
+//                }case let error{
+//                print("Error")
+//                }
+//            case  .failure(error):{
+//                    print("error")
+//                }
+//            }
+//        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +68,8 @@ class ViewController: UIViewController {
         self.imagePicker = UIImagePickerController()
         self.imagePicker?.sourceType = .photoLibrary
         self.imagePicker?.delegate = self
+        test()
     }
-
-
 }
 
 extension ViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
@@ -41,6 +81,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         }
         let model = CellModel(image: image)
         self.cellItems.append(model)
+        // MARK: Upload the Selected Image
         self.imgCollectionView.reloadData()
         picker.dismiss(animated: true, completion: nil)
     }

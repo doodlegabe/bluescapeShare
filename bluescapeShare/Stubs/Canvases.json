@@ -1,0 +1,16 @@
+{
+    "canvas": [
+        {
+            "id": "5d89011b2762c40015921a43",
+            "workspace_id": "71613",
+            "order": 6,
+            "borderColor": "Red",
+            "name": "shareExtensionTest",
+            "x": 200,
+            "y": 200,
+            "width": 1000,
+            "height": 1000,
+            "children": []
+        }
+    ]
+}

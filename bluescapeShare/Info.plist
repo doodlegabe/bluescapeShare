@@ -32,7 +32,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Bluescape Share would like access to your photo library to upload to Bluescape's Web service.</string>
+	<string>Bluescape Share would like access to your photo library to upload to Bluescape&apos;s Web service.</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

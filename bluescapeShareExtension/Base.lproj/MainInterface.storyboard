@@ -39,7 +39,7 @@
                                 <action selector="cancelAction:" destination="j1y-V4-xli" id="Swd-ec-yEM"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Hon-4E-3mY">
+                        <barButtonItem key="rightBarButtonItem" title="Send to Bluescape" id="Hon-4E-3mY">
                             <connections>
                                 <action selector="nextAction:" destination="j1y-V4-xli" id="eF8-a9-Htq"/>
                             </connections>
