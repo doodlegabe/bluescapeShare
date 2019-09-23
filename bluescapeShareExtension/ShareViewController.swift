@@ -39,7 +39,6 @@ class ShareViewController: UIViewController {
     
     func redirectToHostApp() {
         let url = URL(string: "bluescapeShare://dataUrl=\(sharedKey)")
-        print(url)
         var responder = self as UIResponder?
         let selectorOpenURL = sel_registerName("openURL:")
         
@@ -61,11 +60,8 @@ class ShareViewController: UIViewController {
              if attachment.hasItemConformingToTypeIdentifier(contentType) {
                 attachment.loadItem(forTypeIdentifier: contentType, options: nil) {
                     data, error in
-                    
                     if error == nil {
-                        print("no error")
                         let url = data as! NSURL
-                        print(url)
                         if let imageData = NSData(contentsOf: url as URL) {
                             self.previewImage.image =  UIImage(data:imageData as Data,scale:1.0)
                         }
@@ -76,13 +72,10 @@ class ShareViewController: UIViewController {
                         let action = UIAlertAction(title: "Error", style: .cancel) { _ in
                             self.dismiss(animated: true, completion: nil)
                         }
-                        
-                        alert.addAction(action)
                         self.present(alert, animated: true, completion: nil)
                     }
-
+                }
             }
-        }
         }
     }
 }
