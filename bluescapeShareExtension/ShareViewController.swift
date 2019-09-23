@@ -28,6 +28,15 @@ class ShareViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.imgCollectionView.delegate = self
+        self.imgCollectionView.dataSource = self
+//        let attributes = [NSAttributedString.Key.foregroundColor.rawValue: UIColor.white,
+//                          NSAttributedString.Key.font: UIFont(name: "Helvetica", size: 18)!] as! [String: Any]
+//        
+//        self.navigationController?.navigationBar.titleTextAttributes = attributes
+        self.navigationItem.title = "Picked Images"
+        self.manageImages()
+        print("extension loaded")
     }
     
     
@@ -50,54 +59,32 @@ class ShareViewController: UIViewController {
         let content = extensionContext!.inputItems[0] as! NSExtensionItem
         let contentType = kUTTypeImage as String
         
-        for (index, attachment) in (content.attachments as! [NSItemProvider]).enumerated() {
-            if attachment.hasItemConformingToTypeIdentifier(contentType) {
-                
-                attachment.loadItem(forTypeIdentifier: contentType, options: nil) { [weak self] data, error in
+        for attachment in content.attachments as! [NSItemProvider] {
+             if attachment.hasItemConformingToTypeIdentifier(contentType) {
+                attachment.loadItem(forTypeIdentifier: contentType, options: nil) {
+                    data, error in
                     
-                    if error == nil, let url = data as? URL, let this = self {
-                        do {
-                            
-                            // GETTING RAW DATA
-                            let rawData = try Data(contentsOf: url)
-                            let image = UIImage(data: rawData)
-                            
-                            // CONVERTED INTO FORMATTED FILE : OVER COME MEMORY WARNING
-                            // YOU USE SCALE PROPERTY ALSO TO REDUCE IMAGE SIZE
-                            
-                            //let image = UIImage.resizableImage(image: rawImage!, width: 100, height: 100)
-                            
-                            let imgData = image!.pngData()
-                            
-                            this.selectedImages.append(image!)
-                            this.imagesData.append(imgData!)
-                            
-                            if index == (content.attachments?.count)! - 1 {
-                                DispatchQueue.main.async {
-                                    this.imgCollectionView.reloadData()
-                                    let userDefaults = UserDefaults(suiteName: "group.com.brotherclone.bluescape.share")
-                                    userDefaults?.set(this.imagesData, forKey: this.sharedKey)
-                                    userDefaults?.synchronize()
-                                }
-                            }
+                    if error == nil {
+                        print("no error")
+                        let url = data as! NSURL
+                        print(url)
+                        if let imageData = NSData(contentsOf: url as URL) {
+                            self.selectedImages.append(UIImage(data: imageData as Data)!)
                         }
-                        catch let exp {
-                            print("GETTING EXCEPTION \(exp.localizedDescription)")
-                        }
-                        
                     } else {
-                        print("GETTING ERROR")
+                        
                         let alert = UIAlertController(title: "Error", message: "Error loading image", preferredStyle: .alert)
                         
                         let action = UIAlertAction(title: "Error", style: .cancel) { _ in
-                            self?.dismiss(animated: true, completion: nil)
+                            self.dismiss(animated: true, completion: nil)
                         }
                         
                         alert.addAction(action)
-                        self?.present(alert, animated: true, completion: nil)
+                        self.present(alert, animated: true, completion: nil)
                     }
-                }
+
             }
+        }
         }
     }
 }
