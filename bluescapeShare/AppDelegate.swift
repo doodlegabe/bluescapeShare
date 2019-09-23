@@ -47,8 +47,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate{
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        
+        print("got triggered \(options)")
         let userDefaults = UserDefaults(suiteName: "group.com.brotherclone.bluescape.share")
+     
+        print(url)
+        
         if let key = url.absoluteString.components(separatedBy: "=").last,
             let sharedArray = userDefaults?.object(forKey: key) as? [Data] {
             
@@ -57,20 +60,23 @@ extension AppDelegate{
             for imageData in sharedArray {
                 let model = CellModel(image: UIImage(data: imageData)!)
                 imageArray.append(model)
+                print(imageArray)
             }
             
-            let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
             let homeVC = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-            homeVC.cellItems = imageArray
-            
+            //homeVC.cellItems = imageArray
+//
             let navVC = storyboard.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
-            
+//
             navVC.viewControllers = [homeVC]
             self.window?.rootViewController = navVC
             self.window?.makeKeyAndVisible()
             
             return true
+        }else{
+            return false
         }
-        return false
     }
 }
