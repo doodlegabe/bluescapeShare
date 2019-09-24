@@ -10,7 +10,7 @@ import Foundation
 
 struct Canvas {
     var id: String
-    var workspaceId: Int
+    var workspaceId: String
     var order: Int
     var borderColor: String
     var name: String
@@ -37,10 +37,9 @@ extension Canvas: Decodable{
     }
     
     init(from decoder: Decoder) throws {
-        
         let container = try decoder.container(keyedBy: CanvasCodingKeys.self)
         id = try container.decode(String.self, forKey: .id)
-        workspaceId = try container.decode(Int.self, forKey: .workspaceId)
+        workspaceId = try container.decode(String.self, forKey: .workspaceId)
         order = try container.decode(Int.self, forKey: .order)
         borderColor = try container.decode(String.self, forKey: .borderColor)
         name = try container.decode(String.self, forKey: .name)
@@ -50,4 +49,22 @@ extension Canvas: Decodable{
         width = try container.decode(Int.self, forKey: .width)
         children = try container.decode(Array.self, forKey: .children)
     }
+}
+
+
+struct Canvases{
+    var canvas: [Canvas]
+}
+
+extension Canvases: Decodable{
+    enum CanvasesCodingKeys: String, CodingKey{
+        case canvas
+    }
+    
+    init(from decoder: Decoder) throws {
+        let container = try decoder.container(keyedBy: CanvasesCodingKeys.self)
+        canvas = try container.decode([Canvas].self, forKey: .canvas)
+
+    }
+    
 }

@@ -24,6 +24,8 @@
 		DA3F2D78233547FD0039E23F /* ShareImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3F2D77233547FD0039E23F /* ShareImageCollectionCell.swift */; };
 		DA3F2D7A2335578B0039E23F /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = DA3F2D792335578B0039E23F /* .gitignore */; };
 		DA3F2D7C233557D30039E23F /* BluescapeAPITargets.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3F2D7B233557D30039E23F /* BluescapeAPITargets.swift */; };
+		DA6FEFA3233A3BE0001650CE /* CanvasImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA6FEFA2233A3BE0001650CE /* CanvasImage.swift */; };
+		DA6FEFA7233A4615001650CE /* Image.json in Resources */ = {isa = PBXBuildFile; fileRef = DA6FEFA6233A4615001650CE /* Image.json */; };
 		DAAD176E23391AC200DC842F /* StorageItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD176D23391AC200DC842F /* StorageItems.swift */; };
 		DAAD1770233930E600DC842F /* Canvas.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD176F233930E600DC842F /* Canvas.swift */; };
 		DAAD1773233956A100DC842F /* Canvases.json in Resources */ = {isa = PBXBuildFile; fileRef = DAAD1772233956A100DC842F /* Canvases.json */; };
@@ -82,6 +84,8 @@
 		DA3F2D77233547FD0039E23F /* ShareImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareImageCollectionCell.swift; sourceTree = "<group>"; };
 		DA3F2D792335578B0039E23F /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		DA3F2D7B233557D30039E23F /* BluescapeAPITargets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluescapeAPITargets.swift; sourceTree = "<group>"; };
+		DA6FEFA2233A3BE0001650CE /* CanvasImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasImage.swift; sourceTree = "<group>"; };
+		DA6FEFA6233A4615001650CE /* Image.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Image.json; sourceTree = "<group>"; };
 		DAAD176D23391AC200DC842F /* StorageItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageItems.swift; sourceTree = "<group>"; };
 		DAAD176F233930E600DC842F /* Canvas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canvas.swift; sourceTree = "<group>"; };
 		DAAD1772233956A100DC842F /* Canvases.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Canvases.json; sourceTree = "<group>"; };
@@ -153,6 +157,7 @@
 				DAAD17742339577600DC842F /* BluescapeAPITesting.swift */,
 				DAAD177623395D3200DC842F /* APITargetProtocol.swift */,
 				DAAD177823395EC300DC842F /* NetworkManager.swift */,
+				DA6FEFA2233A3BE0001650CE /* CanvasImage.swift */,
 			);
 			path = bluescapeShare;
 			sourceTree = "<group>";
@@ -173,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				DAAD1772233956A100DC842F /* Canvases.json */,
+				DA6FEFA6233A4615001650CE /* Image.json */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -291,6 +297,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA6FEFA7233A4615001650CE /* Image.json in Resources */,
 				DA3F2D57233540C80039E23F /* LaunchScreen.storyboard in Resources */,
 				DA3F2D54233540C80039E23F /* Assets.xcassets in Resources */,
 				DAAD1773233956A100DC842F /* Canvases.json in Resources */,
@@ -395,6 +402,7 @@
 				DAAD177923395EC300DC842F /* NetworkManager.swift in Sources */,
 				DAAD1770233930E600DC842F /* Canvas.swift in Sources */,
 				DA3F2D5F233541C30039E23F /* ImageCollectionCell.swift in Sources */,
+				DA6FEFA3233A3BE0001650CE /* CanvasImage.swift in Sources */,
 				DA3F2D7C233557D30039E23F /* BluescapeAPITargets.swift in Sources */,
 				DA3F2D4D233540C80039E23F /* AppDelegate.swift in Sources */,
 				DA3F2D612335436A0039E23F /* CellModel.swift in Sources */,

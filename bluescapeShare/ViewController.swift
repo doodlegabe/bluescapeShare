@@ -13,52 +13,44 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var imgCollectionView: UICollectionView!
     
+    @IBOutlet weak var background: UIImageView!
+    
     var cellItems: [CellModel] = []
     
     var imagePicker: UIImagePickerController?
-
     
     @IBAction func openPhoto(_ sender: Any) {
         self.present(self.imagePicker!, animated: true, completion: nil)
     }
     
-    func test(){
-        let authPlugin = AccessTokenPlugin {APIKeys.bluescapeAuthToken }
+    func getCanvases(canvasesCompletionHandler: @escaping (Canvases?, Error?) -> Void){
         let bluescapeAPIProvider = NetworkManager.provider
         let workspaceID = String(APIKeys.bluescapeAPIWorkspaceID)
-        
         bluescapeAPIProvider.request(.getCanvases(workspaceId: workspaceID)) { result in
             switch result {
             case let .success(moyaResponse):
-
                 do{
                     let filteredResponse = try moyaResponse.filterSuccessfulStatusCodes()
-                    let canvas = try filteredResponse.map(Canvas.self)
+                    let canvasesResult = try filteredResponse.map(Canvases.self)
+                    if let canvases = canvasesResult as Canvases?{
+                        canvasesCompletionHandler(canvases, nil)
+                    }else{
+                        canvasesCompletionHandler(nil, "Can not cast to Canvases" as? Error)
+                    }
                 } catch let error {
-                    print("parse \(error)")
+                    canvasesCompletionHandler(nil, error)
                 }
             case let .failure(error):
-                print(error)
+              canvasesCompletionHandler(nil, error)
             }
         }
-
-        
-//        bluescapeAPIProvider.request(.getCanvases(workspaceId: "")) {
-//            result in
-//            switch result{
-//            case let .success(moyaResponse):
-//                do{
-//                    let filteredResponse = try moyaResponse.filterSuccessfulStatusCodes()
-//                    self.canvas = try filteredResponse.map(Canvas.self)
-//                }case let error{
-//                print("Error")
-//                }
-//            case  .failure(error):{
-//                    print("error")
-//                }
-//            }
-//        }
     }
+    
+    func uploadImage(sharedImage: UIImage){
+        print(sharedImage)
+    }
+    
+
     
     
     override func viewDidLoad() {
@@ -68,7 +60,13 @@ class ViewController: UIViewController {
         self.imagePicker = UIImagePickerController()
         self.imagePicker?.sourceType = .photoLibrary
         self.imagePicker?.delegate = self
-        test()
+        getCanvases(canvasesCompletionHandler: {canvases, error in
+            if let canvases = canvases {
+                // MARK: Can add canvas selection here later.
+                let currentCanvas: Canvas = canvases.canvas[0] as Canvas
+            }
+        })
+        
     }
 }
 
@@ -79,9 +77,20 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         guard let image = info[.originalImage] as? UIImage else {
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
+        self.uploadImage(sharedImage: image)
         let model = CellModel(image: image)
         self.cellItems.append(model)
         // MARK: Upload the Selected Image
+        
+        if let pngRepresentation = image.pngData() {
+            UserDefaults.standard.set(pngRepresentation, forKey: storageItems.imagesKey)
+        }
+
+        
+        
+        
+        
+        
         self.imgCollectionView.reloadData()
         picker.dismiss(animated: true, completion: nil)
     }
@@ -113,3 +122,5 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource, 
     }
     
 }
+
+

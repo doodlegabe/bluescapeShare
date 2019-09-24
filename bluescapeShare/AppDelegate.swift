@@ -35,13 +35,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 extension AppDelegate{
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         let userDefaults = UserDefaults(suiteName: "group.com.brotherclone.bluescape.share")
+         print("does this still work?")
         if let key = url.absoluteString.components(separatedBy: "=").last,
-            let sharedArray = userDefaults?.object(forKey: key) as? [Data] {
+            let sharedImage =  UserDefaults.standard.object(forKey: storageItems.imagesKey) as? Data {
             var imageArray: [CellModel] = []
-            for imageData in sharedArray {
-                let model = CellModel(image: UIImage(data: imageData)!)
-                imageArray.append(model)
-            }
+            let model = CellModel(image: UIImage(data: sharedImage)!)
+            imageArray.append(model)
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let homeVC = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
             homeVC.cellItems = imageArray
@@ -54,6 +53,7 @@ extension AppDelegate{
             self.window?.makeKeyAndVisible()
             return true
         }else{
+            print("error parsing internal URL \(url)")
             return false
         }
     }

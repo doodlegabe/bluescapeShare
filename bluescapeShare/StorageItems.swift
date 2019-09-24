@@ -9,5 +9,5 @@
 import Foundation
 
 struct storageItems {
-    static let imagesKey = "sharedImages"
+    static let imagesKey = "ImageSharePhotoKey"
 }

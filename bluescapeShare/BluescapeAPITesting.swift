@@ -20,6 +20,7 @@ extension BluescapeAPITargets{
     var sampleData: Data{
         switch self {
             case .getCanvases : return stubbedResponse("Canvas")
+            case .addImageToCanvas: return stubbedResponse("Image")
         }
     }
 }
