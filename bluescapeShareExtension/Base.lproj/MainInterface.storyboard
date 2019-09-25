@@ -16,19 +16,31 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Doy-Ak-2JR">
-                                <rect key="frame" x="20" y="438" width="374" height="64"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background-01.png" translatesAutoresizingMaskIntoConstraints="NO" id="S2Z-bv-0S5">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Doy-Ak-2JR">
+                                <rect key="frame" x="20" y="424" width="374" height="438"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="duR-2f-rCo">
-                                <rect key="frame" x="87" y="226" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="duR-2f-rCo">
+                                <rect key="frame" x="20" y="108" width="374" height="342"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="342" id="Ha2-KE-2EJ"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="duR-2f-rCo" firstAttribute="centerX" secondItem="Doy-Ak-2JR" secondAttribute="centerX" id="Viq-J4-uUO"/>
+                            <constraint firstItem="Doy-Ak-2JR" firstAttribute="top" secondItem="duR-2f-rCo" secondAttribute="bottom" constant="8" id="euP-Fu-htK"/>
+                            <constraint firstItem="duR-2f-rCo" firstAttribute="leading" secondItem="1Xd-am-t49" secondAttribute="leading" id="fJT-Pv-hhp"/>
+                            <constraint firstItem="duR-2f-rCo" firstAttribute="centerX" secondItem="wbc-yd-nQP" secondAttribute="centerX" id="nwL-2w-Yfs"/>
+                            <constraint firstItem="duR-2f-rCo" firstAttribute="top" secondItem="1Xd-am-t49" secondAttribute="top" id="sCv-Os-hLC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="1Xd-am-t49"/>
                     </view>
                     <navigationItem key="navigationItem" id="GAI-Za-DYL">
@@ -72,4 +84,7 @@
             <point key="canvasLocation" x="137.68115942028987" y="115.84821428571428"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background-01.png" width="1125.1199951171875" height="2436"/>
+    </resources>
 </document>
