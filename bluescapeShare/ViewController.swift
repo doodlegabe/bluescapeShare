@@ -47,6 +47,7 @@ class ViewController: UIViewController {
     }
     
     func uploadImage(sharedImage: UIImage){
+        print("\n \n sharedimage \n \n")
         print(sharedImage)
     }
     
@@ -83,7 +84,7 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         // MARK: Upload the Selected Image
         
         if let pngRepresentation = image.pngData() {
-            UserDefaults.standard.set(pngRepresentation, forKey: storageItems.imagesKey)
+            UserDefaults.standard.set(pngRepresentation, forKey: storageItems.imageKey)
         }
 
         

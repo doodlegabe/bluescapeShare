@@ -1,8 +1,8 @@
 //
 //  StorageItems.swift
-//  bluescapeShare
+//  bluescapeShareExtension
 //
-//  Created by Gabriel Walsh on 9/23/19.
+//  Created by Gabriel Walsh on 9/25/19.
 //  Copyright © 2019 Gabriel Walsh. All rights reserved.
 //
 

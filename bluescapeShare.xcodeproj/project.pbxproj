@@ -32,6 +32,7 @@
 		DAAD17752339577600DC842F /* BluescapeAPITesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD17742339577600DC842F /* BluescapeAPITesting.swift */; };
 		DAAD177723395D3200DC842F /* APITargetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD177623395D3200DC842F /* APITargetProtocol.swift */; };
 		DAAD177923395EC300DC842F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD177823395EC300DC842F /* NetworkManager.swift */; };
+		DACFE0E4233B925D00A6168C /* StorageItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACFE0E3233B925D00A6168C /* StorageItems.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +93,7 @@
 		DAAD17742339577600DC842F /* BluescapeAPITesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluescapeAPITesting.swift; sourceTree = "<group>"; };
 		DAAD177623395D3200DC842F /* APITargetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITargetProtocol.swift; sourceTree = "<group>"; };
 		DAAD177823395EC300DC842F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		DACFE0E3233B925D00A6168C /* StorageItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageItems.swift; sourceTree = "<group>"; };
 		F7AEC0FC8162764F70C3A5D6 /* Pods_bluescapeShareExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bluescapeShareExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -170,6 +172,7 @@
 				DA3F2D6A233546EB0039E23F /* MainInterface.storyboard */,
 				DA3F2D6D233546EB0039E23F /* Info.plist */,
 				DA3F2D77233547FD0039E23F /* ShareImageCollectionCell.swift */,
+				DACFE0E3233B925D00A6168C /* StorageItems.swift */,
 			);
 			path = bluescapeShareExtension;
 			sourceTree = "<group>";
@@ -416,6 +419,7 @@
 			files = (
 				DA3F2D69233546EB0039E23F /* ShareViewController.swift in Sources */,
 				DA3F2D78233547FD0039E23F /* ShareImageCollectionCell.swift in Sources */,
+				DACFE0E4233B925D00A6168C /* StorageItems.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

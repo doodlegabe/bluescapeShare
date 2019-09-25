@@ -34,23 +34,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 extension AppDelegate{
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
-        let userDefaults = UserDefaults(suiteName: "group.com.brotherclone.bluescape.share")
-         print("does this still work?")
-        if let key = url.absoluteString.components(separatedBy: "=").last,
-            let sharedImage =  UserDefaults.standard.object(forKey: storageItems.imagesKey) as? Data {
-            var imageArray: [CellModel] = []
-            let model = CellModel(image: UIImage(data: sharedImage)!)
-            imageArray.append(model)
-            let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let homeVC = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-            homeVC.cellItems = imageArray
+        if let key = url.absoluteString.components(separatedBy: "=").last{
             
-            // MARK: Upload the Shared Image
+            switch key {
+                case storageItems.imageKey:
+                    print("image")
+                // retrieve from user defaults with key
+                // Display
+                // post to API
+                case storageItems.textKey:
+                    print("text")
+                // retrieve from user defaults with key
+                // Display
+                // post to API
+                default:
+                    print("unknown")
+            }
             
-            let navVC = storyboard.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
-            navVC.viewControllers = [homeVC]
-            self.window?.rootViewController = navVC
-            self.window?.makeKeyAndVisible()
+//            let sharedImage =  UserDefaults(suiteName: "group.com.brotherclone.bluescape.share")!.object(forKey: key) as? Data {
+//            var imageArray: [CellModel] = []
+//            let image = UIImage(data: sharedImage)!
+//            let model = CellModel(image: image)
+//            imageArray.append(model)
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//            let homeVC = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
+//
+//            // MARK: Upload the Shared Image
+//
+//            homeVC.cellItems = imageArray
+//            let navVC = storyboard.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
+//            navVC.viewControllers = [homeVC]
+//            self.window?.rootViewController = navVC
+//            self.window?.makeKeyAndVisible()
             return true
         }else{
             print("error parsing internal URL \(url)")
