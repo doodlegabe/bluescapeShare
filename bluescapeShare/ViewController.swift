@@ -25,8 +25,7 @@ class ViewController: UIViewController {
     
     func getCanvases(canvasesCompletionHandler: @escaping (Canvases?, Error?) -> Void){
         let bluescapeAPIProvider = NetworkManager.provider
-        let workspaceID = String(APIKeys.bluescapeAPIWorkspaceID)
-        bluescapeAPIProvider.request(.getCanvases(workspaceId: workspaceID)) { result in
+        bluescapeAPIProvider.request(.getCanvases(workspaceId: String(APIKeys.bluescapeAPIWorkspaceID))) { result in
             switch result {
             case let .success(moyaResponse):
                 do{
@@ -48,17 +47,16 @@ class ViewController: UIViewController {
     
     func addTextToCanvas(text: String, textCompletionHandler: @escaping (CanvasText?, Error?)-> Void){
         let bluescapeAPIProvider = NetworkManager.provider
-        let workspaceID = String(APIKeys.bluescapeAPIWorkspaceID)
-        let canvasId = String(APIKeys.defaultCanvas)
-        bluescapeAPIProvider.request(.addTextToCanvas(workspaceId: workspaceID,
-                                                      canvasId: canvasId,
+        bluescapeAPIProvider.request(.addTextToCanvas(workspaceId: String(APIKeys.bluescapeAPIWorkspaceID),
+                                                      canvasId: String(APIKeys.defaultCanvas),
                                                       width: 500,
                                                       height: 500,
                                                       text: text,
-                                                      fontFamily: "Dosis",
-                                                      fontStyle: "normal",
-                                                      textTransform: "inherit",
-                                                      backgroundColor: "#ffffff",
+                                                      fontColor: MoleskineStyles.fontColor,
+                                                      fontFamily: MoleskineStyles.fontFamily,
+                                                      fontStyle: MoleskineStyles.fontStyle,
+                                                      textTransform: MoleskineStyles.textTransform,
+                                                      backgroundColor: MoleskineStyles.backgroundColor,
                                                       pin: false)) { result in
                                                         switch result {
                                                                    case let .success(moyaResponse):
@@ -78,26 +76,38 @@ class ViewController: UIViewController {
                                                                    }
                                                                }
         }
-   
     
-    func uploadImage(image: UIImage){
-        print("\n \n sharedimage \n \n")
-        print(image)
+    func addImageToCanvas(image: Data, imageCompletionHandler: @escaping (CanvasImage?, Error?) -> Void){
+        let bluescapeAPIProvider = NetworkManager.provider
+        bluescapeAPIProvider.request(.addImageToCanvas(workspaceId: String(APIKeys.bluescapeAPIWorkspaceID),
+                                                       canvasId: String(APIKeys.defaultCanvas),
+                                                       x: 100,
+                                                       y: 100,
+                                                       url: "",
+                                                       image: image,
+                                                       pin: false,
+                                                       scale: 1)) { result in
+                                                        switch result {
+                                                            case let .success(moyaResponse):
+                                                                do{
+                                                                    let filteredResponse = try moyaResponse.filterSuccessfulStatusCodes()
+                                                                    let canvasesResult = try filteredResponse.map(CanvasImage.self)
+                                                                    if let canvasImage = canvasesResult as CanvasImage?{
+                                                                        imageCompletionHandler(canvasImage, nil)
+                                                                    }else{
+                                                                        imageCompletionHandler(nil, "Can not cast to Canvas Image" as? Error)
+                                                                    }
+                                                                } catch let error {
+                                                                    imageCompletionHandler(nil, error)
+                                                            }
+                                                        case let .failure(error):
+                                                            imageCompletionHandler(nil, error)
+                                                            }
+                                                        }
+        
+        
     }
-    
 
-    func uploadText(text: String){
-        print("\n \n text \n \n")
-        print(text)
-        
-        addTextToCanvas(text: text, textCompletionHandler:{ canvasText, error in
-             if let responseText = canvasText {
-                print("\n\n\n back from bluescape")
-             }
-         })
-        
-    }
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -125,7 +135,6 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         }
         
         if let imageData = UserDefaults(suiteName: "group.com.brotherclone.bluescape.share")!.object(forKey: storageItems.imageKey) as? Data{
-            print("got imaage")
             let retrievedImage = UIImage(data: imageData)
         }
         

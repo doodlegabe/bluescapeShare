@@ -42,11 +42,19 @@ extension AppDelegate{
                         case storageItems.imageKey:
                         if let imageData = UserDefaults(suiteName: "group.com.brotherclone.bluescape.share")!.object(forKey: storageItems.imageKey) as? Data{
                                let retrievedImage = UIImage(data: imageData)
-                                homeVC.uploadImage(image: retrievedImage!)
+                            homeVC.addImageToCanvas(image: imageData) { canvasImage, error in
+                            if let responseImage = canvasImage {
+                                print("\n\n\n back from bluescape \(responseImage)")
+                                }
+                            }
                            }
                         case storageItems.textKey:
                         if let textData = UserDefaults(suiteName: "group.com.brotherclone.bluescape.share")!.object(forKey: storageItems.textKey) as? String {
-                            homeVC.uploadText(text: textData)
+                            homeVC.addTextToCanvas(text: textData, textCompletionHandler:{ canvasText, error in
+                                    if let responseText = canvasText {
+                                       print("\n\n\n back from bluescape \(responseText)")
+                                    }
+                                })
                         }
                         default:
                             print("unknown")

@@ -35,6 +35,7 @@
 		DACFE0E4233B925D00A6168C /* StorageItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACFE0E3233B925D00A6168C /* StorageItems.swift */; };
 		DACFE0E6233BB2D900A6168C /* Text.json in Resources */ = {isa = PBXBuildFile; fileRef = DACFE0E5233BB2D900A6168C /* Text.json */; };
 		DACFE0E8233BB31B00A6168C /* CanvasText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACFE0E7233BB31B00A6168C /* CanvasText.swift */; };
+		DAFF82AC233BE1F500E4D1D1 /* MoleskineStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFF82AB233BE1F500E4D1D1 /* MoleskineStyles.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,7 @@
 		DACFE0E3233B925D00A6168C /* StorageItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageItems.swift; sourceTree = "<group>"; };
 		DACFE0E5233BB2D900A6168C /* Text.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Text.json; sourceTree = "<group>"; };
 		DACFE0E7233BB31B00A6168C /* CanvasText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasText.swift; sourceTree = "<group>"; };
+		DAFF82AB233BE1F500E4D1D1 /* MoleskineStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoleskineStyles.swift; sourceTree = "<group>"; };
 		F7AEC0FC8162764F70C3A5D6 /* Pods_bluescapeShareExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bluescapeShareExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -165,6 +167,7 @@
 				DAAD176F233930E600DC842F /* Canvas.swift */,
 				DACFE0E7233BB31B00A6168C /* CanvasText.swift */,
 				DA6FEFA2233A3BE0001650CE /* CanvasImage.swift */,
+				DAFF82AB233BE1F500E4D1D1 /* MoleskineStyles.swift */,
 			);
 			path = bluescapeShare;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				DAAD176E23391AC200DC842F /* StorageItems.swift in Sources */,
 				DA35DC5223355F7300A8B6B9 /* APIKeys.swift in Sources */,
 				DAAD177923395EC300DC842F /* NetworkManager.swift in Sources */,
+				DAFF82AC233BE1F500E4D1D1 /* MoleskineStyles.swift in Sources */,
 				DAAD1770233930E600DC842F /* Canvas.swift in Sources */,
 				DA3F2D5F233541C30039E23F /* ImageCollectionCell.swift in Sources */,
 				DA6FEFA3233A3BE0001650CE /* CanvasImage.swift in Sources */,
