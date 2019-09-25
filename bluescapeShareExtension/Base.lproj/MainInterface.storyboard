@@ -44,6 +44,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="nextButton" destination="Hon-4E-3mY" id="AA8-Sl-Khb"/>
                         <outlet property="previewImage" destination="duR-2f-rCo" id="4Ax-1W-3Yc"/>
                         <outlet property="previewText" destination="Doy-Ak-2JR" id="Tic-wf-OUW"/>
                     </connections>

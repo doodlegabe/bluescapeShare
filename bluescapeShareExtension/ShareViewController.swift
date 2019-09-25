@@ -21,6 +21,8 @@ class ShareViewController: UIViewController {
     
     @IBOutlet weak var previewText: UILabel!
     
+    @IBOutlet weak var nextButton: UIBarButtonItem!
+    
     var selectedImages: [UIImage] = []
     
     var imagesData: [Data] = []
@@ -32,12 +34,14 @@ class ShareViewController: UIViewController {
     }
     
     @IBAction func nextAction(_ sender: Any) {
-        self.redirectToHostApp()
+        if self.nextButton.isEnabled{
+            self.redirectToHostApp()
+        }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.manageAttachments()
+        manageAttachments()
     }
     
     func redirectToHostApp() {
@@ -60,7 +64,7 @@ class ShareViewController: UIViewController {
     }
     
     func manageAttachments() {
-        
+
         let content = extensionContext?.inputItems[0] as! NSExtensionItem
         
         let imageContentType = kUTTypeImage as String
@@ -75,11 +79,18 @@ class ShareViewController: UIViewController {
                     if error == nil {
                         let url = data as! NSURL
                         if let imageData = NSData(contentsOf: url as URL) {
-                            self.previewImage.image =  UIImage(data:imageData as Data,scale:1.0)
-                            self.currentSharingType = .image
-                            
-                            // Convert to png/jpeg data
-                            // save to user defaults with key
+                            if let image = UIImage(data:imageData as Data, scale:1.0){
+                                self.previewImage.image = image
+                                if let pngRepresenation = image.pngData() {
+                                    if let userDefaults = UserDefaults(suiteName: "group.com.brotherclone.bluescape.share"){
+                                        userDefaults.set(pngRepresenation as AnyObject, forKey: storageItems.imageKey)
+                                        self.currentSharingType = .image
+                                        print("sending image")
+                                    }
+                                }
+                                
+                            }
+ 
                         }
                     } else {
                         print(error)
@@ -95,10 +106,13 @@ class ShareViewController: UIViewController {
                         print(url)
                          if let textData = NSData(contentsOf: url as URL) {
                             let datastring = NSString(data: textData as Data, encoding: String.Encoding.utf8.rawValue)
-                            self.previewText.text = String(datastring!)
-                            self.currentSharingType = .text
-                            
-                            // save to user defaults with key
+                    
+                            if let userDefaults = UserDefaults(suiteName: "group.com.brotherclone.bluescape.share"){
+                                    userDefaults.set(String(datastring!) as AnyObject, forKey: storageItems.textKey)
+                                    self.previewText.text = String(datastring!)
+                                    self.currentSharingType = .text
+                                    print("sending text")
+                                }
                         }
                     } else{
                         print(error)

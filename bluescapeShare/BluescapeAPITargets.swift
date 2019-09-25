@@ -9,68 +9,21 @@
 import Foundation
 import Moya
 
-struct BluescapeAPIFontFamilies {
-    static let dosis = "Dosis"
-    static let helvetica = "Helvetica"
-    static let newTimesRoman = "Times New Roman"
-    static let sourceCodePro = "Source Code Pro"
-    static let aleo = "Aleo"
-    static let exo = "Exo 2"
-}
-
-struct BluescapeAPIFontWeights {
-    static let normal = "normal"
-    static let bold = "bold"
-}
-
-struct BluescapeAPIFontStyles {
-    static let normal = "normal"
-    static let italic = "italic"
-}
-
-struct BluescapeAPITextTransforms {
-    static let inherit = "inherit"
-    static let uppercase = "uppercase"
-}
-
-struct BluescapeAPIStrokeObjectTypes {
-    static let notes = "notes"
-    static let images = "images"
-    static let canvas = "canvas"
-}
-
-struct BluescapeAPIPenColors {
-    static let white = "White"
-    static let gray = "Gray"
-    static let yellow = "Yellow"
-    static let red = "Red"
-    static let green = "Green"
-    static let purple = "Purple"
-    static let cyan = "Cyan"
-}
-
-struct BluescapeAPIBrushTypes{
-    static let pen = "Pen"
-    static let eraser = "Eraser"
-}
-
 enum BluescapeAPITargets {
-//    case getWorkspace(workspaceId: String)
     case getCanvases(workspaceId: String)
-//    case getCanvas(workspaceId: String, cavasId: String)
-//    case addTextToCanvas(
-//        workspaceId: String,
-//        cavasId: String,
+    case addTextToCanvas(
+        workspaceId: String,
+        canvasId: String,
 //        x: Int,
 //        y: Int,
-//        width: Int,
-//        height: Int,
-//        text: String,
-//        fontFamily: BluescapeAPIFontFamilies,
-//        fontStyle: BluescapeAPIFontStyles,
-//        textTransmform: BluescapeAPITextTransforms,
-//        backgroundColor: String,
-//        pin: Bool)
+        width: Int,
+        height: Int,
+        text: String,
+        fontFamily: String,
+        fontStyle: String,
+        textTransform: String,
+        backgroundColor: String,
+        pin: Bool)
     case addImageToCanvas(
         workspaceId: String,
         canvasId: String,
@@ -80,15 +33,6 @@ enum BluescapeAPITargets {
         image: Data,
         pin: Bool,
         scale: Int)
-//    case addStrokesToCanvas(
-//        workspaceId: String,
-//        objectType: BluescapeAPIStrokeObjectTypes,
-//        objectId: String,
-//        penColor: BluescapeAPIPenColors,
-//        brushSize: Int,
-//        brushType: BluescapeAPIBrushTypes,
-//        points: [Any]
-//    )
 }
 
 extension BluescapeAPITargets: TargetType, AccessTokenAuthorizable  {
@@ -101,8 +45,10 @@ extension BluescapeAPITargets: TargetType, AccessTokenAuthorizable  {
         switch self {
             case .getCanvases(let workspaceId):
                 return "/workspaces/\(workspaceId)/elements/canvas"
-        case .addImageToCanvas(let workspaceId, let canvasId, _, _, _, _ , _, _):
+            case .addImageToCanvas(let workspaceId, let canvasId, _, _, _, _ , _, _):
                 return "/workspaces/\(workspaceId)/elements/canvas/\(canvasId)/images"
+            case .addTextToCanvas(let workspaceId, let canvasId, _, _, _, _, _, _, _, _):
+                return "/workspaces/\(workspaceId)/elements/canvas/\(canvasId)/text"
         }
     }
     
@@ -110,14 +56,14 @@ extension BluescapeAPITargets: TargetType, AccessTokenAuthorizable  {
         switch self {
             case .getCanvases:
                 return .get
-            case .addImageToCanvas:
+            case .addImageToCanvas, .addTextToCanvas:
                 return .post
         }
     }
     
     var authorizationType: AuthorizationType {
         switch self {
-            case .getCanvases, .addImageToCanvas:
+            case .getCanvases, .addImageToCanvas, .addTextToCanvas:
                 return .bearer
             }
     }
@@ -126,21 +72,44 @@ extension BluescapeAPITargets: TargetType, AccessTokenAuthorizable  {
         switch self{
             case .getCanvases:
                  return .requestPlain
-        case .addImageToCanvas(_, _, let x, let y, let url, let image, let pin, let scale):
-            var formData = [MultipartFormData]()
-            let urlData = "\(url)".data(using: String.Encoding.utf8) ?? Data()
-            let xData = "\(x)".data(using: String.Encoding.utf8) ?? Data()
-            let yData = "\(y)".data(using: String.Encoding.utf8) ?? Data()
-            let pinData = "\(pin)".data(using: String.Encoding.utf8) ?? Data()
-            let scaleData = "\(scale)".data(using: String.Encoding.utf8) ?? Data()
-            formData.append(Moya.MultipartFormData(provider: .data(urlData), name: "url"))
-            formData.append(Moya.MultipartFormData(provider: .data(xData), name: "x"))
-            formData.append(Moya.MultipartFormData(provider: .data(yData), name: "y"))
-            formData.append(Moya.MultipartFormData(provider: .data(pinData), name: "pin"))
-            formData.append(Moya.MultipartFormData(provider: .data(scaleData), name: "scale"))
-            formData.append(Moya.MultipartFormData(provider: .data(image), name: "image", mimeType: "image/jpeg"))
-            return .uploadMultipart(formData)
-        }
+            case .addImageToCanvas(_, _, let x, let y, let url, let image, let pin, let scale):
+                var formData = [MultipartFormData]()
+                let urlData = "\(url)".data(using: String.Encoding.utf8) ?? Data()
+                let xData = "\(x)".data(using: String.Encoding.utf8) ?? Data()
+                let yData = "\(y)".data(using: String.Encoding.utf8) ?? Data()
+                let pinData = "\(pin)".data(using: String.Encoding.utf8) ?? Data()
+                let scaleData = "\(scale)".data(using: String.Encoding.utf8) ?? Data()
+                formData.append(Moya.MultipartFormData(provider: .data(urlData), name: "url"))
+                formData.append(Moya.MultipartFormData(provider: .data(xData), name: "x"))
+                formData.append(Moya.MultipartFormData(provider: .data(yData), name: "y"))
+                formData.append(Moya.MultipartFormData(provider: .data(pinData), name: "pin"))
+                formData.append(Moya.MultipartFormData(provider: .data(scaleData), name: "scale"))
+                formData.append(Moya.MultipartFormData(provider: .data(image), name: "image", mimeType: "image/jpeg"))
+                return .uploadMultipart(formData)
+            case .addTextToCanvas(_, _, let width, let height, let text, let fontFamily, let fontStyle, let textTransform, let backgroundColor, let pin):
+                var formData = [MultipartFormData]()
+//                let xData = "\(x)".data(using: String.Encoding.utf8) ?? Data()
+//                let yData = "\(y)".data(using: String.Encoding.utf8) ?? Data()
+                let width = "\(width)".data(using: String.Encoding.utf8) ?? Data()
+                let height = "\(height)".data(using: String.Encoding.utf8) ?? Data()
+                let text = "\(text)".data(using: String.Encoding.utf8) ?? Data()
+                let fontFamily = "\(fontFamily)".data(using: String.Encoding.utf8) ?? Data()
+                let fontStyle = "\(fontStyle)".data(using: String.Encoding.utf8) ?? Data()
+                let textTransform = "\(textTransform)".data(using: String.Encoding.utf8) ?? Data()
+                let backgroundColor = "\(backgroundColor)".data(using: String.Encoding.utf8) ?? Data()
+                let pin = "\(pin)".data(using: String.Encoding.utf8) ?? Data()
+//                formData.append(Moya.MultipartFormData(provider: .data(xData), name: "x"))
+//                formData.append(Moya.MultipartFormData(provider: .data(yData), name: "y"))
+                formData.append(Moya.MultipartFormData(provider: .data(width), name: "width"))
+                formData.append(Moya.MultipartFormData(provider: .data(height), name: "height"))
+                formData.append(Moya.MultipartFormData(provider: .data(text), name: "text"))
+                formData.append(Moya.MultipartFormData(provider: .data(fontFamily), name: "fontFamily"))
+                formData.append(Moya.MultipartFormData(provider: .data(fontStyle), name: "fontStyle"))
+                formData.append(Moya.MultipartFormData(provider: .data(textTransform), name: "textTransform"))
+                formData.append(Moya.MultipartFormData(provider: .data(backgroundColor), name: "backgroundColor"))
+                formData.append(Moya.MultipartFormData(provider: .data(pin), name: "pin"))
+                return .uploadMultipart(formData)
+            }
     }
     
     var headers: [String : String]? {
@@ -149,6 +118,8 @@ extension BluescapeAPITargets: TargetType, AccessTokenAuthorizable  {
             return ["Content-type": "application/json"]
         case .addImageToCanvas:
             return ["Content-type" : "multipart/form-data"]
+        case .addTextToCanvas:
+            return ["Content-type" : "form-data"]
         }
     }
 }

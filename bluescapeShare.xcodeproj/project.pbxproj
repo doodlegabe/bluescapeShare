@@ -33,6 +33,8 @@
 		DAAD177723395D3200DC842F /* APITargetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD177623395D3200DC842F /* APITargetProtocol.swift */; };
 		DAAD177923395EC300DC842F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD177823395EC300DC842F /* NetworkManager.swift */; };
 		DACFE0E4233B925D00A6168C /* StorageItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACFE0E3233B925D00A6168C /* StorageItems.swift */; };
+		DACFE0E6233BB2D900A6168C /* Text.json in Resources */ = {isa = PBXBuildFile; fileRef = DACFE0E5233BB2D900A6168C /* Text.json */; };
+		DACFE0E8233BB31B00A6168C /* CanvasText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACFE0E7233BB31B00A6168C /* CanvasText.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +96,8 @@
 		DAAD177623395D3200DC842F /* APITargetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITargetProtocol.swift; sourceTree = "<group>"; };
 		DAAD177823395EC300DC842F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		DACFE0E3233B925D00A6168C /* StorageItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageItems.swift; sourceTree = "<group>"; };
+		DACFE0E5233BB2D900A6168C /* Text.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Text.json; sourceTree = "<group>"; };
+		DACFE0E7233BB31B00A6168C /* CanvasText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasText.swift; sourceTree = "<group>"; };
 		F7AEC0FC8162764F70C3A5D6 /* Pods_bluescapeShareExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bluescapeShareExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -155,10 +159,11 @@
 				DA3F2D602335436A0039E23F /* CellModel.swift */,
 				DA35DC5123355F7300A8B6B9 /* APIKeys.swift */,
 				DAAD176D23391AC200DC842F /* StorageItems.swift */,
-				DAAD176F233930E600DC842F /* Canvas.swift */,
 				DAAD17742339577600DC842F /* BluescapeAPITesting.swift */,
 				DAAD177623395D3200DC842F /* APITargetProtocol.swift */,
 				DAAD177823395EC300DC842F /* NetworkManager.swift */,
+				DAAD176F233930E600DC842F /* Canvas.swift */,
+				DACFE0E7233BB31B00A6168C /* CanvasText.swift */,
 				DA6FEFA2233A3BE0001650CE /* CanvasImage.swift */,
 			);
 			path = bluescapeShare;
@@ -182,6 +187,7 @@
 			children = (
 				DAAD1772233956A100DC842F /* Canvases.json */,
 				DA6FEFA6233A4615001650CE /* Image.json */,
+				DACFE0E5233BB2D900A6168C /* Text.json */,
 			);
 			path = Stubs;
 			sourceTree = "<group>";
@@ -305,6 +311,7 @@
 				DA3F2D54233540C80039E23F /* Assets.xcassets in Resources */,
 				DAAD1773233956A100DC842F /* Canvases.json in Resources */,
 				DA35DC4E23355D3100A8B6B9 /* background-01.png in Resources */,
+				DACFE0E6233BB2D900A6168C /* Text.json in Resources */,
 				DA3F2D52233540C80039E23F /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,6 +414,7 @@
 				DA3F2D5F233541C30039E23F /* ImageCollectionCell.swift in Sources */,
 				DA6FEFA3233A3BE0001650CE /* CanvasImage.swift in Sources */,
 				DA3F2D7C233557D30039E23F /* BluescapeAPITargets.swift in Sources */,
+				DACFE0E8233BB31B00A6168C /* CanvasText.swift in Sources */,
 				DA3F2D4D233540C80039E23F /* AppDelegate.swift in Sources */,
 				DA3F2D612335436A0039E23F /* CellModel.swift in Sources */,
 				DAAD177723395D3200DC842F /* APITargetProtocol.swift in Sources */,

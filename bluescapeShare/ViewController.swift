@@ -46,12 +46,57 @@ class ViewController: UIViewController {
         }
     }
     
-    func uploadImage(sharedImage: UIImage){
+    func addTextToCanvas(text: String, textCompletionHandler: @escaping (CanvasText?, Error?)-> Void){
+        let bluescapeAPIProvider = NetworkManager.provider
+        let workspaceID = String(APIKeys.bluescapeAPIWorkspaceID)
+        let canvasId = String(APIKeys.defaultCanvas)
+        bluescapeAPIProvider.request(.addTextToCanvas(workspaceId: workspaceID,
+                                                      canvasId: canvasId,
+                                                      width: 500,
+                                                      height: 500,
+                                                      text: text,
+                                                      fontFamily: "Dosis",
+                                                      fontStyle: "normal",
+                                                      textTransform: "inherit",
+                                                      backgroundColor: "#ffffff",
+                                                      pin: false)) { result in
+                                                        switch result {
+                                                                   case let .success(moyaResponse):
+                                                                       do{
+                                                                           let filteredResponse = try moyaResponse.filterSuccessfulStatusCodes()
+                                                                           let canvasesResult = try filteredResponse.map(CanvasText.self)
+                                                                           if let canvasText = canvasesResult as CanvasText?{
+                                                                               textCompletionHandler(canvasText, nil)
+                                                                           }else{
+                                                                               textCompletionHandler(nil, "Can not cast to Canvas Text" as? Error)
+                                                                           }
+                                                                       } catch let error {
+                                                                           textCompletionHandler(nil, error)
+                                                                       }
+                                                                   case let .failure(error):
+                                                                     textCompletionHandler(nil, error)
+                                                                   }
+                                                               }
+        }
+   
+    
+    func uploadImage(image: UIImage){
         print("\n \n sharedimage \n \n")
-        print(sharedImage)
+        print(image)
     }
     
 
+    func uploadText(text: String){
+        print("\n \n text \n \n")
+        print(text)
+        
+        addTextToCanvas(text: text, textCompletionHandler:{ canvasText, error in
+             if let responseText = canvasText {
+                print("\n\n\n back from bluescape")
+             }
+         })
+        
+    }
     
     
     override func viewDidLoad() {
@@ -61,12 +106,12 @@ class ViewController: UIViewController {
         self.imagePicker = UIImagePickerController()
         self.imagePicker?.sourceType = .photoLibrary
         self.imagePicker?.delegate = self
-        getCanvases(canvasesCompletionHandler: {canvases, error in
-            if let canvases = canvases {
-                // MARK: Can add canvas selection here later.
-                let currentCanvas: Canvas = canvases.canvas[0] as Canvas
-            }
-        })
+//        getCanvases(canvasesCompletionHandler: {canvases, error in
+//            if let canvases = canvases {
+//                // MARK: Can add canvas selection here later.
+//                let currentCanvas: Canvas = canvases.canvas[0] as Canvas
+//            }
+//        })
         
     }
 }
@@ -78,20 +123,14 @@ extension ViewController: UIImagePickerControllerDelegate, UINavigationControlle
         guard let image = info[.originalImage] as? UIImage else {
             fatalError("Expected a dictionary containing an image, but was provided the following: \(info)")
         }
-        self.uploadImage(sharedImage: image)
+        
+        if let imageData = UserDefaults(suiteName: "group.com.brotherclone.bluescape.share")!.object(forKey: storageItems.imageKey) as? Data{
+            print("got imaage")
+            let retrievedImage = UIImage(data: imageData)
+        }
+        
         let model = CellModel(image: image)
         self.cellItems.append(model)
-        // MARK: Upload the Selected Image
-        
-        if let pngRepresentation = image.pngData() {
-            UserDefaults.standard.set(pngRepresentation, forKey: storageItems.imageKey)
-        }
-
-        
-        
-        
-        
-        
         self.imgCollectionView.reloadData()
         picker.dismiss(animated: true, completion: nil)
     }

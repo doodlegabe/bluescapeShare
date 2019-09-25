@@ -21,6 +21,7 @@ extension BluescapeAPITargets{
         switch self {
             case .getCanvases : return stubbedResponse("Canvas")
             case .addImageToCanvas: return stubbedResponse("Image")
+            case .addTextToCanvas: return stubbedResponse("Text")
         }
     }
 }

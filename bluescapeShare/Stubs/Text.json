@@ -1,0 +1,18 @@
+{
+    "text": {
+        "id": "5d8b7b372762c40015922d9f",
+        "x": 100,
+        "y": 100,
+        "width": 358,
+        "height": 150,
+        "text": "Hi there.",
+        "fontSize": 64,
+        "fontFamily": "Dosis",
+        "fontColor": "#ffffff",
+        "fontWeight": "normal",
+        "fontStyle": "normal",
+        "textTransform": "inherit",
+        "pin": false,
+        "order": 19
+    }
+}
