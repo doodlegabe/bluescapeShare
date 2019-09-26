@@ -67,8 +67,9 @@
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
       "size" : "29x29",
+      "idiom" : "ipad",
+      "filename" : "bs-29@2x-1.png",
       "scale" : "2x"
     },
     {
@@ -90,8 +91,9 @@
       "scale" : "1x"
     },
     {
-      "idiom" : "ipad",
       "size" : "76x76",
+      "idiom" : "ipad",
+      "filename" : "bs-76@2x.png",
       "scale" : "2x"
     },
     {
