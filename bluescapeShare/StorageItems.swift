@@ -12,6 +12,3 @@ struct storageItems {
     static let imageKey = "ImageShareKey"
     static let textKey = "TextShareKey"
 }
-
-// MARK: Figure out a way to share this as one file.
-

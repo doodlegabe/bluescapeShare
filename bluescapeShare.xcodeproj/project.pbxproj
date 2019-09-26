@@ -32,7 +32,6 @@
 		DAAD17752339577600DC842F /* BluescapeAPITesting.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD17742339577600DC842F /* BluescapeAPITesting.swift */; };
 		DAAD177723395D3200DC842F /* APITargetProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD177623395D3200DC842F /* APITargetProtocol.swift */; };
 		DAAD177923395EC300DC842F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD177823395EC300DC842F /* NetworkManager.swift */; };
-		DACFE0E4233B925D00A6168C /* StorageItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACFE0E3233B925D00A6168C /* StorageItems.swift */; };
 		DACFE0E6233BB2D900A6168C /* Text.json in Resources */ = {isa = PBXBuildFile; fileRef = DACFE0E5233BB2D900A6168C /* Text.json */; };
 		DACFE0E8233BB31B00A6168C /* CanvasText.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACFE0E7233BB31B00A6168C /* CanvasText.swift */; };
 		DAFF82AC233BE1F500E4D1D1 /* MoleskineStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAFF82AB233BE1F500E4D1D1 /* MoleskineStyles.swift */; };
@@ -52,6 +51,7 @@
 		DAFF82CB233BF08B00E4D1D1 /* Contents.json in Resources */ = {isa = PBXBuildFile; fileRef = DAFF82BB233BF08B00E4D1D1 /* Contents.json */; };
 		DAFF82CC233BF08B00E4D1D1 /* bs-20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = DAFF82BC233BF08B00E4D1D1 /* bs-20@2x.png */; };
 		DAFF82CD233BF08B00E4D1D1 /* bs-20.png in Resources */ = {isa = PBXBuildFile; fileRef = DAFF82BD233BF08B00E4D1D1 /* bs-20.png */; };
+		DAFF82CE233CDB3B00E4D1D1 /* StorageItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAAD176D23391AC200DC842F /* StorageItems.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -112,7 +112,6 @@
 		DAAD17742339577600DC842F /* BluescapeAPITesting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluescapeAPITesting.swift; sourceTree = "<group>"; };
 		DAAD177623395D3200DC842F /* APITargetProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APITargetProtocol.swift; sourceTree = "<group>"; };
 		DAAD177823395EC300DC842F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
-		DACFE0E3233B925D00A6168C /* StorageItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageItems.swift; sourceTree = "<group>"; };
 		DACFE0E5233BB2D900A6168C /* Text.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Text.json; sourceTree = "<group>"; };
 		DACFE0E7233BB31B00A6168C /* CanvasText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasText.swift; sourceTree = "<group>"; };
 		DAFF82AB233BE1F500E4D1D1 /* MoleskineStyles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoleskineStyles.swift; sourceTree = "<group>"; };
@@ -213,7 +212,6 @@
 				DA3F2D6A233546EB0039E23F /* MainInterface.storyboard */,
 				DA3F2D6D233546EB0039E23F /* Info.plist */,
 				DA3F2D77233547FD0039E23F /* ShareImageCollectionCell.swift */,
-				DACFE0E3233B925D00A6168C /* StorageItems.swift */,
 			);
 			path = bluescapeShareExtension;
 			sourceTree = "<group>";
@@ -501,9 +499,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAFF82CE233CDB3B00E4D1D1 /* StorageItems.swift in Sources */,
 				DA3F2D69233546EB0039E23F /* ShareViewController.swift in Sources */,
 				DA3F2D78233547FD0039E23F /* ShareImageCollectionCell.swift in Sources */,
-				DACFE0E4233B925D00A6168C /* StorageItems.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

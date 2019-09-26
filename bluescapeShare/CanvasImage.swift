@@ -29,7 +29,7 @@ extension CanvasImage: Decodable{
         case order
         case title
     }
-
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CanvasImageCodingKeys.self)
         id = try container.decode(String.self, forKey: .id)
@@ -41,19 +41,3 @@ extension CanvasImage: Decodable{
         title = try container.decode(String.self, forKey: .title)
     }
 }
-
-
-/*
- 
- {
-     "image": {
-         "id": "5d8a3a6b2762c400159223dc",
-         "x": 100,
-         "y": 100,
-         "pin": true,
-         "scale": 1,
-         "order": 18,
-         "title": "IMG_0327.jpeg"
-     }
- }
- */

@@ -9,7 +9,7 @@
 import UIKit
 
 class ImageCollectionCell: UICollectionViewCell {
-
+    
     @IBOutlet weak var imgView: UIImageView!
     
     var item: CellModel? {

@@ -64,7 +64,7 @@ extension Canvases: Decodable{
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CanvasesCodingKeys.self)
         canvas = try container.decode([Canvas].self, forKey: .canvas)
-
+        
     }
     
 }

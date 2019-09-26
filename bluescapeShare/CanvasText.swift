@@ -9,8 +9,6 @@
 import Foundation
 
 struct CanvasText {
-//    var x: Int
-//    var y: Int
     var width: Int
     var height: Int
     var text: String
@@ -24,8 +22,6 @@ struct CanvasText {
 
 extension CanvasText: Decodable{
     enum CanvasTextCodingKeys: String, CodingKey{
-//        case x
-//        case y
         case width
         case height
         case text
@@ -36,11 +32,9 @@ extension CanvasText: Decodable{
         case pin
         case order
     }
-
+    
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CanvasTextCodingKeys.self)
-//        x = try container.decode(Int.self, forKey: .x)
-//        y = try container.decode(Int.self, forKey: .y)
         width = try container.decode(Int.self, forKey: .width)
         height = try container.decode(Int.self, forKey: .height)
         text = try container.decode(String.self, forKey: .text)
