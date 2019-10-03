@@ -40,19 +40,20 @@ extension AppDelegate{
         if let key = url.absoluteString.components(separatedBy: "=").last{
             switch key {
             case storageItems.imageKey:
-                if let imageData = UserDefaults(suiteName: "group.com.brotherclone.bluescape.share")!.object(forKey: storageItems.imageKey) as? Data{
-                    let retrievedImage = UIImage(data: imageData)
+                if let imageData = UserDefaults(suiteName: APIKeys.sharedSuiteName)!.object(forKey: storageItems.imageKey) as? Data{
                     homeVC.addImageToCanvas(image: imageData) { canvasImage, error in
                         if let responseImage = canvasImage {
                             print("\n\n\n back from bluescape \(responseImage)")
+                            // MARK: Display Bluescape in Webview
                         }
                     }
                 }
             case storageItems.textKey:
-                if let textData = UserDefaults(suiteName: "group.com.brotherclone.bluescape.share")!.object(forKey: storageItems.textKey) as? String {
+                if let textData = UserDefaults(suiteName: APIKeys.sharedSuiteName)!.object(forKey: storageItems.textKey) as? String {
                     homeVC.addTextToCanvas(text: textData, textCompletionHandler:{ canvasText, error in
                         if let responseText = canvasText {
                             print("\n\n\n back from bluescape \(responseText)")
+                            // MARK: Display Bluescape in Webview
                         }
                     })
                 }

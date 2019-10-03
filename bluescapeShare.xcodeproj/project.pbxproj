@@ -16,8 +16,6 @@
 		DA3F2D52233540C80039E23F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA3F2D50233540C80039E23F /* Main.storyboard */; };
 		DA3F2D54233540C80039E23F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA3F2D53233540C80039E23F /* Assets.xcassets */; };
 		DA3F2D57233540C80039E23F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA3F2D55233540C80039E23F /* LaunchScreen.storyboard */; };
-		DA3F2D5F233541C30039E23F /* ImageCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3F2D5E233541C30039E23F /* ImageCollectionCell.swift */; };
-		DA3F2D612335436A0039E23F /* CellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3F2D602335436A0039E23F /* CellModel.swift */; };
 		DA3F2D69233546EB0039E23F /* ShareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3F2D68233546EB0039E23F /* ShareViewController.swift */; };
 		DA3F2D6C233546EB0039E23F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA3F2D6A233546EB0039E23F /* MainInterface.storyboard */; };
 		DA3F2D70233546EB0039E23F /* bluescapeShareExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = DA3F2D66233546EB0039E23F /* bluescapeShareExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -93,8 +91,6 @@
 		DA3F2D53233540C80039E23F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA3F2D56233540C80039E23F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DA3F2D58233540C80039E23F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DA3F2D5E233541C30039E23F /* ImageCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionCell.swift; sourceTree = "<group>"; };
-		DA3F2D602335436A0039E23F /* CellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellModel.swift; sourceTree = "<group>"; };
 		DA3F2D66233546EB0039E23F /* bluescapeShareExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = bluescapeShareExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA3F2D68233546EB0039E23F /* ShareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareViewController.swift; sourceTree = "<group>"; };
 		DA3F2D6B233546EB0039E23F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -185,12 +181,10 @@
 				DA3F2D76233547230039E23F /* bluescapeShare.entitlements */,
 				DA3F2D4C233540C80039E23F /* AppDelegate.swift */,
 				DA3F2D4E233540C80039E23F /* ViewController.swift */,
-				DA3F2D5E233541C30039E23F /* ImageCollectionCell.swift */,
 				DA3F2D50233540C80039E23F /* Main.storyboard */,
 				DA3F2D53233540C80039E23F /* Assets.xcassets */,
 				DA3F2D55233540C80039E23F /* LaunchScreen.storyboard */,
 				DA3F2D58233540C80039E23F /* Info.plist */,
-				DA3F2D602335436A0039E23F /* CellModel.swift */,
 				DA35DC5123355F7300A8B6B9 /* APIKeys.swift */,
 				DAAD176D23391AC200DC842F /* StorageItems.swift */,
 				DAAD17742339577600DC842F /* BluescapeAPITesting.swift */,
@@ -485,12 +479,10 @@
 				DAAD177923395EC300DC842F /* NetworkManager.swift in Sources */,
 				DAFF82AC233BE1F500E4D1D1 /* MoleskineStyles.swift in Sources */,
 				DAAD1770233930E600DC842F /* Canvas.swift in Sources */,
-				DA3F2D5F233541C30039E23F /* ImageCollectionCell.swift in Sources */,
 				DA6FEFA3233A3BE0001650CE /* CanvasImage.swift in Sources */,
 				DA3F2D7C233557D30039E23F /* BluescapeAPITargets.swift in Sources */,
 				DACFE0E8233BB31B00A6168C /* CanvasText.swift in Sources */,
 				DA3F2D4D233540C80039E23F /* AppDelegate.swift in Sources */,
-				DA3F2D612335436A0039E23F /* CellModel.swift in Sources */,
 				DAAD177723395D3200DC842F /* APITargetProtocol.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
