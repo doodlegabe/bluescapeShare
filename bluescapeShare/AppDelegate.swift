@@ -34,9 +34,7 @@ extension AppDelegate{
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let homeVC = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        let navVC = storyboard.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
-        navVC.viewControllers = [homeVC]
-        self.window?.rootViewController = navVC
+        self.window?.rootViewController = homeVC
         if let key = url.absoluteString.components(separatedBy: "=").last{
             switch key {
             case storageItems.imageKey:

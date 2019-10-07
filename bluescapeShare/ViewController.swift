@@ -13,6 +13,8 @@ class ViewController: UIViewController {
         
     @IBOutlet weak var background: UIImageView!
     
+    @IBOutlet weak var statusText: UILabel!
+    
     func getCanvases(canvasesCompletionHandler: @escaping (Canvases?, Error?) -> Void){
         let bluescapeAPIProvider = NetworkManager.provider
         bluescapeAPIProvider.request(.getCanvases(workspaceId: String(APIKeys.bluescapeAPIWorkspaceID))) { result in
@@ -55,6 +57,7 @@ class ViewController: UIViewController {
                                                                 let canvasesResult = try filteredResponse.map(CanvasText.self)
                                                                 if let canvasText = canvasesResult as CanvasText?{
                                                                     textCompletionHandler(canvasText, nil)
+                                                                    self.statusText.text = "Posted Text to Bluescape Canvas: \(String(APIKeys.defaultCanvas))"
                                                                 }else{
                                                                     textCompletionHandler(nil, "Can not cast to Canvas Text" as? Error)
                                                                 }
@@ -84,6 +87,7 @@ class ViewController: UIViewController {
                                                                 let canvasesResult = try filteredResponse.map(CanvasImage.self)
                                                                 if let canvasImage = canvasesResult as CanvasImage?{
                                                                     imageCompletionHandler(canvasImage, nil)
+                                                                    self.statusText.text = "Posted Image to Bluescape Canvas: \(String(APIKeys.defaultCanvas))"
                                                                 }else{
                                                                     imageCompletionHandler(nil, "Can not cast to Canvas Image" as? Error)
                                                                 }
@@ -99,5 +103,6 @@ class ViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        statusText.text = ""
     }
 }
