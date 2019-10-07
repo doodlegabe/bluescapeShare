@@ -34,25 +34,24 @@ extension AppDelegate{
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let homeVC = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        let navVC = storyboard.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
-        navVC.viewControllers = [homeVC]
-        self.window?.rootViewController = navVC
+        self.window?.rootViewController = homeVC
         if let key = url.absoluteString.components(separatedBy: "=").last{
             switch key {
             case storageItems.imageKey:
-                if let imageData = UserDefaults(suiteName: "group.com.brotherclone.bluescape.share")!.object(forKey: storageItems.imageKey) as? Data{
-                    let retrievedImage = UIImage(data: imageData)
+                if let imageData = UserDefaults(suiteName: APIKeys.sharedSuiteName)!.object(forKey: storageItems.imageKey) as? Data{
                     homeVC.addImageToCanvas(image: imageData) { canvasImage, error in
                         if let responseImage = canvasImage {
                             print("\n\n\n back from bluescape \(responseImage)")
+                            // MARK: Display Bluescape in Webview
                         }
                     }
                 }
             case storageItems.textKey:
-                if let textData = UserDefaults(suiteName: "group.com.brotherclone.bluescape.share")!.object(forKey: storageItems.textKey) as? String {
+                if let textData = UserDefaults(suiteName: APIKeys.sharedSuiteName)!.object(forKey: storageItems.textKey) as? String {
                     homeVC.addTextToCanvas(text: textData, textCompletionHandler:{ canvasText, error in
                         if let responseText = canvasText {
                             print("\n\n\n back from bluescape \(responseText)")
+                            // MARK: Display Bluescape in Webview
                         }
                     })
                 }
