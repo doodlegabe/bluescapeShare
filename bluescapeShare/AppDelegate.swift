@@ -38,20 +38,23 @@ extension AppDelegate{
         if let key = url.absoluteString.components(separatedBy: "=").last{
             switch key {
             case storageItems.imageKey:
+                homeVC.statusText.text = "Sending image to Bluescape"
                 if let imageData = UserDefaults(suiteName: APIKeys.sharedSuiteName)!.object(forKey: storageItems.imageKey) as? Data{
                     homeVC.addImageToCanvas(image: imageData) { canvasImage, error in
-                        if let responseImage = canvasImage {
-                            print("\n\n\n back from bluescape \(responseImage)")
-                            // MARK: Display Bluescape in Webview
+                        homeVC.displayWebLink()
+                        if error != nil{
+                            print(error as Any)
                         }
+                                        
                     }
                 }
             case storageItems.textKey:
+                homeVC.statusText.text = "Sending text to Bluescape"
                 if let textData = UserDefaults(suiteName: APIKeys.sharedSuiteName)!.object(forKey: storageItems.textKey) as? String {
                     homeVC.addTextToCanvas(text: textData, textCompletionHandler:{ canvasText, error in
-                        if let responseText = canvasText {
-                            print("\n\n\n back from bluescape \(responseText)")
-                            // MARK: Display Bluescape in Webview
+                          homeVC.displayWebLink()
+                        if error != nil{
+                            print(error as Any)
                         }
                     })
                 }
