@@ -11,9 +11,14 @@ import Moya
 
 class ViewController: UIViewController {
         
-    @IBOutlet weak var background: UIImageView!
     
     @IBOutlet weak var statusText: UILabel!
+    
+    @IBOutlet weak var viewOnBluescapeButton: UIButton!
+    
+    @IBAction func viewOnBluescape(_ sender: Any) {
+        
+    }
     
     func getCanvases(canvasesCompletionHandler: @escaping (Canvases?, Error?) -> Void){
         let bluescapeAPIProvider = NetworkManager.provider
@@ -57,7 +62,6 @@ class ViewController: UIViewController {
                                                                 let canvasesResult = try filteredResponse.map(CanvasText.self)
                                                                 if let canvasText = canvasesResult as CanvasText?{
                                                                     textCompletionHandler(canvasText, nil)
-                                                                    self.statusText.text = "Posted Text to Bluescape Canvas: \(String(APIKeys.defaultCanvas))"
                                                                 }else{
                                                                     textCompletionHandler(nil, "Can not cast to Canvas Text" as? Error)
                                                                 }
@@ -87,7 +91,6 @@ class ViewController: UIViewController {
                                                                 let canvasesResult = try filteredResponse.map(CanvasImage.self)
                                                                 if let canvasImage = canvasesResult as CanvasImage?{
                                                                     imageCompletionHandler(canvasImage, nil)
-                                                                    self.statusText.text = "Posted Image to Bluescape Canvas: \(String(APIKeys.defaultCanvas))"
                                                                 }else{
                                                                     imageCompletionHandler(nil, "Can not cast to Canvas Image" as? Error)
                                                                 }
@@ -101,8 +104,25 @@ class ViewController: UIViewController {
         
         
     }
+    
+    func displayWebLink(){
+        statusText.text = "Bluescape posting successful."
+        viewOnBluescapeButton.isHidden = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        statusText.text = ""
+        statusText.text = "Awaiting text or image."
+        viewOnBluescapeButton.setTitle("View on Bluescape", for: .normal)
+        viewOnBluescapeButton.isHidden = true
+        self.view.backgroundColor = UIColor.black
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showBluescape",
+            let nextViewController = segue.destination as? BluescapeWebViewController{
+            let urlString = APIKeys.bluescapeWebBaseUrl + "/" + APIKeys.bluescapeAPIWorkspaceID
+            nextViewController.bluescapeURL = URL(string:urlString)!
+        }
     }
 }

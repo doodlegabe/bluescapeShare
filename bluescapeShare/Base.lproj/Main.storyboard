@@ -15,19 +15,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background-01.png" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K4x-0X-4lp">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background-01.png" translatesAutoresizingMaskIntoConstraints="NO" id="NDc-xc-OSX">
+                                <rect key="frame" x="-132" y="0.0" width="606" height="1134"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="606" id="AQR-iV-sj4"/>
+                                    <constraint firstAttribute="height" constant="1134" id="xrp-I7-KBJ"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FL7-DE-3k0">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FL7-DE-3k0">
                                 <rect key="frame" x="20" y="191" width="374" height="184"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="184" id="mOq-MA-Vct"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bec-ku-xgq">
+                                <rect key="frame" x="20" y="433" width="374" height="30"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="viewOnBluescape:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TsS-Th-Ox4"/>
+                                    <segue destination="RLj-Rf-cjB" kind="show" identifier="showBluescape" id="j2P-uA-BCU"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="FL7-DE-3k0" firstAttribute="leading" secondItem="bec-ku-xgq" secondAttribute="leading" id="04h-JX-Epc"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bec-ku-xgq" secondAttribute="bottom" constant="399" id="2Lf-x1-1BC"/>
+                            <constraint firstItem="FL7-DE-3k0" firstAttribute="trailing" secondItem="bec-ku-xgq" secondAttribute="trailing" id="72s-Xa-H5A"/>
+                            <constraint firstItem="FL7-DE-3k0" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="147" id="8uk-h9-CHU"/>
+                            <constraint firstItem="FL7-DE-3k0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="CD8-9E-1gZ"/>
+                            <constraint firstItem="NDc-xc-OSX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="-44" id="Gex-GN-RdV"/>
+                            <constraint firstItem="FL7-DE-3k0" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="bJn-XV-UUS"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NDc-xc-OSX" secondAttribute="trailing" constant="-80" id="sva-kQ-oIM"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="v3Q-7a-woc">
@@ -38,13 +63,40 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="background" destination="K4x-0X-4lp" id="oSu-De-26b"/>
                         <outlet property="statusText" destination="FL7-DE-3k0" id="Zcv-2B-z2b"/>
+                        <outlet property="viewOnBluescapeButton" destination="bec-ku-xgq" id="VBc-SR-m42"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1047.8260869565217" y="137.94642857142856"/>
+        </scene>
+        <!--Bluescape Web View Controller-->
+        <scene sceneID="NPo-Uj-3F3">
+            <objects>
+                <viewController id="RLj-Rf-cjB" customClass="BluescapeWebViewController" customModule="Bluescape_Share" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="yE1-ud-Ggy">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="f4x-EL-IEg">
+                                <rect key="frame" x="0.0" y="-54" width="414" height="896"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="I1P-oQ-MAC"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="RMo-hY-eNC"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jwi-cH-KWl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1911.594202898551" y="137.94642857142856"/>
         </scene>
     </scenes>
     <resources>
