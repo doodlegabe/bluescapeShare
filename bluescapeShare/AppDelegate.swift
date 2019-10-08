@@ -34,25 +34,27 @@ extension AppDelegate{
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let homeVC = storyboard.instantiateViewController(withIdentifier: "ViewController") as! ViewController
-        let navVC = storyboard.instantiateViewController(withIdentifier: "NavigationController") as! UINavigationController
-        navVC.viewControllers = [homeVC]
-        self.window?.rootViewController = navVC
+        self.window?.rootViewController = homeVC
         if let key = url.absoluteString.components(separatedBy: "=").last{
             switch key {
             case storageItems.imageKey:
-                if let imageData = UserDefaults(suiteName: "group.com.brotherclone.bluescape.share")!.object(forKey: storageItems.imageKey) as? Data{
-                    let retrievedImage = UIImage(data: imageData)
+                homeVC.statusText.text = "Sending image to Bluescape"
+                if let imageData = UserDefaults(suiteName: APIKeys.sharedSuiteName)!.object(forKey: storageItems.imageKey) as? Data{
                     homeVC.addImageToCanvas(image: imageData) { canvasImage, error in
-                        if let responseImage = canvasImage {
-                            print("\n\n\n back from bluescape \(responseImage)")
+                        homeVC.displayWebLink()
+                        if error != nil{
+                            print(error as Any)
                         }
+                                        
                     }
                 }
             case storageItems.textKey:
-                if let textData = UserDefaults(suiteName: "group.com.brotherclone.bluescape.share")!.object(forKey: storageItems.textKey) as? String {
+                homeVC.statusText.text = "Sending text to Bluescape"
+                if let textData = UserDefaults(suiteName: APIKeys.sharedSuiteName)!.object(forKey: storageItems.textKey) as? String {
                     homeVC.addTextToCanvas(text: textData, textCompletionHandler:{ canvasText, error in
-                        if let responseText = canvasText {
-                            print("\n\n\n back from bluescape \(responseText)")
+                          homeVC.displayWebLink()
+                        if error != nil{
+                            print(error as Any)
                         }
                     })
                 }

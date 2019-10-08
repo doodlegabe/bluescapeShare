@@ -12,4 +12,6 @@ import Moya
 protocol APITargetable {
     var provider: MoyaProvider<BluescapeAPITargets> { get }
     func getCanvases(workspaceId: Int, completion: @escaping (Canvases, Error)-> ())
+    func addTextToCanvas(text: String, completion: @escaping (CanvasText, Error) -> ())
+    func addImageToCanvas(image: Data, completion: @escaping (CanvasImage, Error) -> ())
 }
